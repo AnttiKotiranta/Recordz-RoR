@@ -1,0 +1,50 @@
+
+<h2>
+  <%= @artist.name %>
+</h2>
+
+<p>
+  <%= @artist.info %>
+</p>
+<br>
+<% if @artist.bands.count.nil? %>
+<h3>Member of <%= pluralize(@artist.bands.count, 'band')%>:</h3>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+	<% @artist.bands.each do |r| %>
+    	<tr>
+	      <th><%link_to r.name, band_path(r)%></th>
+    	</tr>
+	<%end%>
+  </body>
+</table>
+<%end%>
+<h3>Performer on following records:</h3>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Performer</th>
+    </tr>
+  </thead>
+  <tbody>
+	<% @artist.records.each do |r| %>
+    <tr>
+	
+	      <th><%link_to r.name, record_path(r)%></th>
+	      <th><%r.performer%></th>
+    </tr>
+	<%end%>
+  </body>
+</table>
+<br>
+<p>
+<% if current_user %>
+<%= link_to 'Edit', edit_artist_path(@artist), class:"btn btn-primary" %>
+<% end %>
+</p>

@@ -1,0 +1,4 @@
+class AddPerformerToArtistsAndBands < ActiveRecord::Migration
+  def change
+  end
+end

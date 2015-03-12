@@ -1,0 +1,26 @@
+<h2>Artists</h2>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Info</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @artists.each do |artist| %>
+      <tr>
+        <td><%=link_to artist.name, artist_path(artist) %></td>
+        <td><%= artist.info %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<p><%if current_user %>
+<%= link_to 'New Artist', new_artist_path, class:"btn btn-primary" %>
+<%end%>
+</p>

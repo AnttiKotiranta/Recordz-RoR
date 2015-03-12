@@ -1,0 +1,11 @@
+<li><%= link_to 'Records', records_path %></li>
+<li><%= link_to 'Bands', bands_path %></li>
+<li><%= link_to 'Artists', artists_path %></li>
+<li><%= link_to 'Collectors', users_path %></li>
+<% if not current_user.nil? %>
+    <li><%= link_to 'My collection', current_user %></li>
+    <li><%= link_to 'signout', signout_path, method: :delete %></li>
+<% else %>
+    <li><%= link_to 'signin', signin_path %></li>
+    <li><%= link_to 'signup', signup_path %></li>
+<% end %>

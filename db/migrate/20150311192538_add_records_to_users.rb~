@@ -1,0 +1,8 @@
+class AddRecordsToUsers < ActiveRecord::Migration
+  def change
+	create_table :records_users, id: false do |t|
+	t.belongs_to :records, index: true
+        t.belongs_to :users, index: true
+	end
+  end
+end
