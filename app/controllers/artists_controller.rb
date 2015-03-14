@@ -1,5 +1,5 @@
 class ArtistsController < ApplicationController
-  before_action :set_artist, only: [:show, :edit, :update, :destroy]
+  before_action :set_artist, only: [:show, :edit, :update, :destroy, :add_bands]
   before_action :check_signedin, only: [:new, :edit, :update, :destroy]
 
   # GET /artists
@@ -11,6 +11,8 @@ class ArtistsController < ApplicationController
   # GET /artists/1
   # GET /artists/1.json
   def show
+	@bands = Band.all 
+	@records = Record.all
   end
 
   # GET /artists/new
@@ -50,6 +52,22 @@ class ArtistsController < ApplicationController
       end
     end
   end
+ def add_bands
+	band = Band.find(params[:band_id])
+	if @artist.add_band(band)
+	  redirect_to artist_path(@artist), notice: 'Band was successfully added.'
+	else 
+	 render action: 'artist', notice: 'Failed to add band.'
+	end
+ end
+  def add_records
+	perf = Performer.find(params[:performer_id])
+	if @artist.add_record(perf)
+	  redirect_to artist_path(@artist), notice: 'Record was successfully added.'
+	else 
+	 render action: 'artist', notice: 'Failed to add record.'
+	end
+ end
 
   # DELETE /artists/1
   # DELETE /artists/1.json
@@ -69,8 +87,13 @@ class ArtistsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def artist_params
-      params.require(:artist).permit(:name, :string, :info)
+      params.require(:artist).permit(:name, :info)
     end
+    def set_artists_and_bands
+	@artists=Artist.all
+	@bands=Band.all
+    end
+	
     def check_signedin
 	if not current_user
 	redirect_to 'signin', notice: 'You should be logged in'

@@ -5,8 +5,11 @@ Recordz::Application.routes.draw do
   resources :bands
   resources :artists
   resource :session, only: [:new, :create, :delete]
+  resources :artists do
+  	put 'add_bands', on: :member
+  end
 
-  get 'root', to: 'records'
+  root 'records#index'
   get 'signup', to: 'users#new'
   get 'signin', to: 'sessions#new'
   delete 'signout', to: 'sessions#destroy'

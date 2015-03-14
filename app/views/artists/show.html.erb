@@ -7,8 +7,9 @@
   <%= @artist.info %>
 </p>
 <br>
+<p>
 
-<% if @artist.bands.count.nil? %>
+<% if not @artist.bands.empty? %>
 <h3>Member of <%= pluralize(@artist.bands.count, 'band')%>:</h3>
 <table class="table table-hover">
   <thead>
@@ -19,14 +20,14 @@
   <tbody>
 	<% @artist.bands.each do |r| %>
     	<tr>
-	      <th><%link_to r.name, band_path(r)%></th>
+	      <td><%= link_to r.name, band_path(r)%></td>
     	</tr>
 	<%end%>
   </body>
 </table>
 <%end%>
-
-<h3>Performer on following records:</h3>
+<% if not @artist.records.empty? %>
+<h3>Performer on <%= pluralize(@artist.bands.count, 'record')%></h3>
 <table class="table table-hover">
   <thead>
     <tr>
@@ -37,15 +38,35 @@
   <tbody>
 	<% @artist.records.each do |r| %>
     <tr>
-	      <th><%link_to r.name, record_path(r)%></th>
-	      <th><%r.performer%></th>
+	      <td><%link_to r.name, record_path(r)%></td>
+	      <td><%r.performer%></td>
     </tr>
 	<%end%>
   </body>
 </table>
+<%end%>
+
 <br>
+
 <p>
 <% if current_user %>
-<%= link_to 'Edit', edit_artist_path(@artist), class:"btn btn-primary" %>
+
+<h3>Add a record or band</h3>
+<%= form_tag(add_bands_artist_path, :method=>'put') do %>
+ <p>
+   <%= select_tag(:band_id, options_from_collection_for_select(@bands, :id, :name)) %>
+   <%= submit_tag 'Add band' %> 
+</p>
+<%end%>
+<%= form_tag(add_records_artist_path, :method=>'put') do %>
+ <p>
+   <%= select_tag(:performer_id, options_from_collection_for_select(@records, :id, :name)) %>
+   <%= submit_tag 'Add record' %> 
+</p>
+<%end%>  
+
+
+<br>
+<%= link_to edit_and_destroy_buttons(@artist), class:"btn btn-primary" %>
 <% end %>
 </p>

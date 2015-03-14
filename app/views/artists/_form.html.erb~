@@ -16,13 +16,13 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :string %><br>
-    <%= f.text_field :string %>
-  </div>
-  <div class="field">
     <%= f.label :info %><br>
     <%= f.text_area :info %>
   </div>
+ <div>
+    <%= f.select :bands, options_from_collection_for_select(@bands, :id, :name, selected: @artist.add_band(@bands)) 
+    %>
+</div>
   <div class="actions">
     <%= f.submit %>
   </div>
