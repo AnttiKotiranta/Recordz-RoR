@@ -8,7 +8,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 
 group :development, :test do
-  gem 'sqlite3'
+gem 'sqlite3' 
 
   #error handling etc.
   gem 'byebug'
@@ -18,6 +18,11 @@ end
 group :development do
   gem 'rack-mini-profiler'
   gem 'rails_layout'
+end
+
+group :production do
+   gem 'pg'
+   gem 'rails_12factor'
 end
 
 # Use SCSS for stylesheets

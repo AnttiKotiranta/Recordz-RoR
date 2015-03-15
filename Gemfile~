@@ -2,12 +2,13 @@ source 'https://rubygems.org'
 
 ruby '2.2.0'
 gem 'rails', '~> 4.0.2'
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
 gem 'bcrypt', '~> 3.1.7'
-
+gem 'sqlite3'
 
 group :development, :test do
-  gem 'sqlite3'
+ 
 
   #error handling etc.
   gem 'byebug'
@@ -17,6 +18,11 @@ end
 group :development do
   gem 'rack-mini-profiler'
   gem 'rails_layout'
+end
+
+group :production do
+   gem 'pg'
+   gem 'rails_12factor'
 end
 
 # Use SCSS for stylesheets
