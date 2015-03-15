@@ -10,4 +10,10 @@ class ApplicationController < ActionController::Base
     User.find(session[:user_id])
   end
 
+   def check_signedin
+	if not current_user
+	redirect_to 'signin', notice: 'You should be logged in'
+	end
+    end
+
 end

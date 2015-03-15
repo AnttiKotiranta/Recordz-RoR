@@ -11,7 +11,7 @@ class ArtistsController < ApplicationController
   # GET /artists/1
   # GET /artists/1.json
   def show
-	@bands = Band.all 
+	@bands = Band.all
 	@records = Record.all
   end
 
@@ -61,8 +61,8 @@ class ArtistsController < ApplicationController
 	end
  end
   def add_records
-	record = Record.find(params[:record_id])
-	if @artist.add_record(record)
+	perf = Performer.find(params[:performer_id])
+	if @artist.add_record(perf)
 	  redirect_to artist_path(@artist), notice: 'Record was successfully added.'
 	else 
 	 render action: 'artist', notice: 'Failed to add record.'
@@ -94,9 +94,5 @@ class ArtistsController < ApplicationController
 	@bands=Band.all
     end
 	
-    def check_signedin
-	if not current_user
-	redirect_to 'signin', notice: 'You should be logged in'
-	end
-    end
+
 end

@@ -3,4 +3,8 @@ class Record < ActiveRecord::Base
 	has_many :artists, through: :performer
 	has_many :bands, through: :performer
 	has_and_belongs_to_many :users
+
+	validates :name, :year, presence: true
+	
+	
 end

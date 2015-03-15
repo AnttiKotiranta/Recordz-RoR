@@ -25,7 +25,7 @@
   </div>
   <div class="field">
     <%= f.label :status %><br>
-    <%= f.select :status, options_for_select([["Active","Active"],["On hold","On hold"],["Split-up","Split-up"]]) %>
+    <%= f.select :status, options_for_select(["Active","Active"],["On hold","On hold"],["Split-up","Split-up"]) %>
   </div>
   <div class="actions">
     <%= f.submit %>

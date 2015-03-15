@@ -73,7 +73,7 @@ class BandsController < ApplicationController
   end
   def add_artists
 	artist = Artist.find(params[:artist_id])
-	if @band.add_artist(artist)
+	if @band.add_record(artist)
 	  redirect_to band_path(@band), notice: 'Artist was successfully added.'
 	else 
 	 render action: 'band', notice: 'Failed to add artist.'

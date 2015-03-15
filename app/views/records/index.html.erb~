@@ -21,7 +21,5 @@
 </table>
 
 <br>
-<p><%if current_user %>
-<%= link_to 'New Record', new_record_path , class:"btn btn-primary" %>
-<%end%>
-</p>
+
+<%= link_to 'New Record', new_record_path %>

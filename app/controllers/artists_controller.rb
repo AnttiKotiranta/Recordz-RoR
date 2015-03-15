@@ -1,5 +1,5 @@
 class ArtistsController < ApplicationController
-  before_action :set_artist, only: [:show, :edit, :update, :destroy, :add_bands]
+  before_action :set_artist, only: [:show, :edit, :update, :destroy, :add_bands, :add_records]
   before_action :check_signedin, only: [:new, :edit, :update, :destroy]
 
   # GET /artists
@@ -11,7 +11,7 @@ class ArtistsController < ApplicationController
   # GET /artists/1
   # GET /artists/1.json
   def show
-	@bands = Band.all 
+	@bands = Band.all
 	@records = Record.all
   end
 
@@ -94,9 +94,5 @@ class ArtistsController < ApplicationController
 	@bands=Band.all
     end
 	
-    def check_signedin
-	if not current_user
-	redirect_to 'signin', notice: 'You should be logged in'
-	end
-    end
+
 end

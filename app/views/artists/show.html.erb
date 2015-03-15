@@ -27,7 +27,7 @@
 </table>
 <%end%>
 <% if not @artist.records.empty? %>
-<h3>Performer on <%= pluralize(@artist.bands.count, 'record')%></h3>
+<h3>Performer on <%= pluralize(@artist.records.count, 'record')%></h3>
 <table class="table table-hover">
   <thead>
     <tr>
@@ -38,8 +38,8 @@
   <tbody>
 	<% @artist.records.each do |r| %>
     <tr>
-	      <td><%link_to r.name, record_path(r)%></td>
-	      <td><%r.performer%></td>
+	      <td><%= link_to r.name, record_path(r)%></td>
+	      <td><%= r.performer%></td>
     </tr>
 	<%end%>
   </body>

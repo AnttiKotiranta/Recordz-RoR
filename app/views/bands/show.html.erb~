@@ -68,7 +68,6 @@
 </p>
 <%end%>  
 </p>
-
+<%end%>
 <br>
 <%= link_to edit_and_destroy_buttons(@band), class:"btn btn-primary" %>
-<%end%>

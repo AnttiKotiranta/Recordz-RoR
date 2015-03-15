@@ -9,6 +9,10 @@ Recordz::Application.routes.draw do
   	put 'add_bands', on: :member
 	put 'add_records', on: :member
   end
+  resources :bands do
+	put 'add_artists', on: :member
+	put 'add_records', on: :member
+  end
 
   root 'records#index'
   get 'signup', to: 'users#new'

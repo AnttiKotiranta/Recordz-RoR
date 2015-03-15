@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-	has_many :records
+	has_and_belongs_to_many :records
 	has_secure_password
 
 	validates :username, uniqueness: true, length: { minimum: 3, maximum: 15 }
