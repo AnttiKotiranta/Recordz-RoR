@@ -14,6 +14,7 @@ gem 'sqlite3'
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem "better_errors"
+  gem 'rspec-rails', '~> 3.0'
 end
 group :development do
   gem 'rack-mini-profiler'
