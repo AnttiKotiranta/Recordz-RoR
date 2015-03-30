@@ -1,11 +1,11 @@
 <h1>Ruby on Rails: Recordz music record database</h1>
-<i> ruby on rails harjoitustyö kevät 2015</i>
+<i> Ruby on rails harjoitustyö kevät 2015</i>
 
 http://recordz-ror.herokuapp.com
 [![Build Status](https://travis-ci.org/AnttiKotiranta/Recordz-RoR.png)](https://travis-ci.org/AnttiKotiranta/Recordz-RoR)
 
 <h2>What is Recordz?</h2>
-With Recordz users can add bands and artists records to their own collection. They may create new records for bands and artits and that way make the Recordz-record collection an epicly fun site to collect your own music!
+Recordz is a site for music collectors, where users can add bands and artists records to their own collection. They may create new records for bands and artits and that way make the Recordz-record collection an epicly fun site to collect your own music!
 
 <h2>How to use</h2>
 Users must create an account and log-in to the Recordz in order to add or change their own, band, record or artist data. Otherwise they may only view the record, band, artist and music collectors collection. 
@@ -19,6 +19,8 @@ Users can edit their bio, collection and delete usership in their own page.
 
 <h2>Testing & Datamodel</h2>
 More info about the testing will be added later.
+<b>Datamodel<b>
+<br>
 [![yuml](http://yuml.me/4bbf8bae)]
 
 
