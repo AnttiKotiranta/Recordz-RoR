@@ -1,7 +1,6 @@
-
-<h2>
+<h1>
   <%= @artist.name %>
-</h2>
+</h1>
 
 <p>
   <%= @artist.info %>
@@ -32,14 +31,12 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Performer</th>
     </tr>
   </thead>
   <tbody>
 	<% @artist.records.each do |r| %>
     <tr>
 	      <td><%= link_to r.name, record_path(r)%></td>
-	      <td><%= r.performer%></td>
     </tr>
 	<%end%>
   </body>

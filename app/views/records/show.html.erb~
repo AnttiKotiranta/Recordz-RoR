@@ -28,7 +28,7 @@
 <p>
 <% if current_user %>
 
-<%=link_to 'Add record to collection', add_to_collection_record_path, :method=>'put', class:"btn btn-primary" %>
+<%=link_to 'Add record to collection', add_users_record_path, :method=>'put', class:"btn btn-primary" %>
 
 <h3>Add performer for the record</h3>
 <%= form_tag(add_artists_record_path, :method=>'put') do %>

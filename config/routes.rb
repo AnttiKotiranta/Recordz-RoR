@@ -1,4 +1,5 @@
 Recordz::Application.routes.draw do
+  root 'records#index'
 
   resources :users
   resources :records
@@ -13,8 +14,14 @@ Recordz::Application.routes.draw do
 	put 'add_artists', on: :member
 	put 'add_records', on: :member
   end
+  resources :records do
+	put 'add_bands', on: :member
+	put 'add_artists', on: :member
+	put 'add_to_collection', on: :member
+	put 'remove_from_collection', on: :member
+  end
 
-  root 'records#index'
+  
   get 'signup', to: 'users#new'
   get 'signin', to: 'sessions#new'
   delete 'signout', to: 'sessions#destroy'

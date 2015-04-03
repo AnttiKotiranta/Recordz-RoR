@@ -5,7 +5,9 @@
     <tr>
       <th>Name</th>
       <th>Year</th>
-      <th>Performer</th>
+      <th>Performed by:</th>
+      <th>Bands</th>
+      <th>Artists</th>
     </tr>
   </thead>
 
@@ -14,7 +16,9 @@
       <tr>
         <td><%=link_to record.name, record  %></td>
         <td><%= record.year %></td>
-        <td><%= record.performer%></td>
+	<td></td>
+        <td><% record.bands.each do |b|%><%=link_to b.name, band_path(b)%>, <%end%></td>
+	<td><% record.artists.each do |a|%><%=link_to a.name, artist_path(a)%>, <%end%></td>
       </tr>
     <% end %>
   </tbody>

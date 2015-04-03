@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+	include AddRecords
+
 	has_and_belongs_to_many :records
 	has_secure_password
 

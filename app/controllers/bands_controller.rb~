@@ -77,7 +77,7 @@ class BandsController < ApplicationController
 	if @band.add_artist(artist)
 	  redirect_to band_path(@band), notice: 'Artist was successfully added.'
 	else 
-	 render action: 'band', notice: 'Failed to add artist. Already added?'
+	 redirect_to band_path(@band), notice: 'Failed to add artist. Already added?'
 	end
   end
 

@@ -1,6 +1,7 @@
 class ArtistsController < ApplicationController
   before_action :set_artist, only: [:show, :edit, :update, :destroy, :add_bands, :add_records]
   before_action :check_signedin, only: [:new, :edit, :update, :destroy]
+  before_action :check_signed_in, except: [:index, :show]
 
   # GET /artists
   # GET /artists.json
@@ -88,12 +89,6 @@ class ArtistsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def artist_params
       params.require(:artist).permit(:name, :info)
-    end
-
-   # def set_artists_and_bands
-	#@artists=Artist.all
-	#@bands=Band.all
-    #end
-	
+    end	
 
 end

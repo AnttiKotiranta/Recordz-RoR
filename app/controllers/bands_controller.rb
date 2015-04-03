@@ -1,5 +1,6 @@
 class BandsController < ApplicationController
   before_action :set_band, only: [:show, :edit, :update, :destroy, :add_records, :add_artists]
+  before_action :check_signed_in, except: [:index, :show]
 
   # GET /bands
   # GET /bands.json

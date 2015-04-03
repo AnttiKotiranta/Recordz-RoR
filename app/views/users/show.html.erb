@@ -1,23 +1,18 @@
-<h2>
+<h1>
   <%= @user.username %>
-</h2>
+</h1>
 
-<br>
-
-<h3>Record collection</h3>
-<p>Number of records: <%@user.records.count%></p>
+<p>Number of records in collection: <%=@user.records.count%></p>
 <table class="table table-hover">
 	<thead>
 	 <tr>
 	  <th>Name<th>
-	  <th>Performer<th>
 	 </tr>
 	</th>
 	<tbody>
 	<% @user.records.each do |r| %>
 	 <tr>
-	  <td><%link_to r.name, record_path(r) %></td>
-	  <td><% r.performer%></td>	 
+	  <td><%=link_to r.name, record_path(r) %></td>
 	</tr>
 	<%end%>
 	</tbody>
@@ -29,5 +24,8 @@
 <p>
  <% if @user == current_user %>
    <%= link_to 'Edit', edit_user_path(@user), class:"btn btn-primary" %>
+<br>
+<br>
+   <%= link_to 'Destroy account', user_path(@user), method: :delete, data: {confirm: 'Are you sure?' }, class:"btn btn-danger" %>
  <%end%>
 </p>

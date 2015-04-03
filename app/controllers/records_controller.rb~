@@ -88,10 +88,6 @@ class RecordsController < ApplicationController
 	 redirect_to record_path(@record), notice: 'Already in collection?'
 	end
   end
-  def remove_from_collection
-	user = current_user.id
-	
-  end
 
 
   private
