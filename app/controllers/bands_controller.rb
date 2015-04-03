@@ -64,19 +64,20 @@ class BandsController < ApplicationController
   end
 
   def add_records
-	perf = Performer.find(params[:performer_id])
-	if @band.add_record(perf)
+	rec = Record.find(params[:record_id])
+	if @band.add_record(rec)
 	  redirect_to band_path(@band), notice: 'Record was successfully added.'
 	else 
-	 render action: 'band', notice: 'Failed to add record.'
+	 redirect_to band_path(@band), notice: 'Failed to add record. Already added?'
 	end
   end
+
   def add_artists
 	artist = Artist.find(params[:artist_id])
 	if @band.add_artist(artist)
 	  redirect_to band_path(@band), notice: 'Artist was successfully added.'
 	else 
-	 render action: 'band', notice: 'Failed to add artist.'
+	 redirect_to band_path(@band), notice: 'Failed to add artist. Already added?'
 	end
   end
 

@@ -60,7 +60,7 @@
 <%end%>
 <%= form_tag(add_records_artist_path, :method=>'put') do %>
  <p>
-   <%= select_tag(:performer_id, options_from_collection_for_select(@records, :id, :name)) %>
+   <%= select_tag(:record_id, options_from_collection_for_select(@records, :id, :name)) %>
    <%= submit_tag 'Add record' %> 
 </p>
 <%end%>  

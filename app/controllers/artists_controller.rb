@@ -57,15 +57,15 @@ class ArtistsController < ApplicationController
 	if @artist.add_band(band)
 	  redirect_to artist_path(@artist), notice: 'Band was successfully added.'
 	else 
-	 render action: 'artist', notice: 'Failed to add band.'
+	 redirect_to artist_path(@artist), notice: 'Failed to add band. Already added?'
 	end
  end
   def add_records
-	perf = Performer.find(params[:performer_id])
+	perf = Record.find(params[:record_id])
 	if @artist.add_record(perf)
 	  redirect_to artist_path(@artist), notice: 'Record was successfully added.'
 	else 
-	 render action: 'artist', notice: 'Failed to add record.'
+	 redirect_to artist_path(@artist), notice: 'Failed to add record. Already added?'
 	end
  end
 
@@ -89,10 +89,11 @@ class ArtistsController < ApplicationController
     def artist_params
       params.require(:artist).permit(:name, :info)
     end
-    def set_artists_and_bands
-	@artists=Artist.all
-	@bands=Band.all
-    end
+
+   # def set_artists_and_bands
+	#@artists=Artist.all
+	#@bands=Band.all
+    #end
 	
 
 end

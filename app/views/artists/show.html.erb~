@@ -38,8 +38,8 @@
   <tbody>
 	<% @artist.records.each do |r| %>
     <tr>
-	      <td><%link_to r.name, record_path(r)%></td>
-	      <td><%r.performer%></td>
+	      <td><%= link_to r.name, record_path(r)%></td>
+	      <td><%= r.performer%></td>
     </tr>
 	<%end%>
   </body>

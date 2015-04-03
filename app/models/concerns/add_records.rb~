@@ -2,18 +2,28 @@ module AddRecords
 extend ActiveSupport::Concern
 
 	def add_band(bandid)
-	band = Band.find_by id:bandid
-	self.bands << band
+		if not self.bands.find_by id:bandid
+		band = Band.find_by id:bandid
+		self.bands << band
+		else return false
+		end
 	end
 
 	def add_record(recordid)
-	rec = Performer.find_by id:recordid
-	self.permormers << rec
+		if self.records.find_by id:recordid
+		return false
+		else
+		rec = Record.find_by id:recordid
+		self.records << rec
+		end
 	end
 
 	def add_artist(artistid)
-	art = Artist.find_by id:artistid
-	self.artists << art
+		if not self.bands.find_by id:artistid
+		art = Artist.find_by id:artistid
+		self.artists << art
+		else return false
+		end
 	end
 
 

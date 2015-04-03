@@ -20,13 +20,10 @@
     <%= f.text_area :info %>
   </div>
   <div class="field">
-    <%= f.label :formed %><br>
+    <%= f.label :year released %><br>
     <%= f.number_field :year %>
   </div>
-  <div class="field">
-    <%= f.label :performer%><br>
-    <%= f.select :performer_id, options_from_collection_for_select(@bands, :id, :name) %>
-  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
