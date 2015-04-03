@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150311192538) do
+ActiveRecord::Schema.define(version: 20150403100516) do
 
   create_table "artists", force: true do |t|
     t.string   "name"
@@ -28,13 +28,13 @@ ActiveRecord::Schema.define(version: 20150311192538) do
   add_index "artists_bands", ["artist_id"], name: "index_artists_bands_on_artist_id"
   add_index "artists_bands", ["band_id"], name: "index_artists_bands_on_band_id"
 
-  create_table "artists_performers", id: false, force: true do |t|
+  create_table "artists_records", id: false, force: true do |t|
     t.integer "artist_id"
-    t.integer "performer_id"
+    t.integer "record_id"
   end
 
-  add_index "artists_performers", ["artist_id"], name: "index_artists_performers_on_artist_id"
-  add_index "artists_performers", ["performer_id"], name: "index_artists_performers_on_performer_id"
+  add_index "artists_records", ["artist_id"], name: "index_artists_records_on_artist_id"
+  add_index "artists_records", ["record_id"], name: "index_artists_records_on_record_id"
 
   create_table "bands", force: true do |t|
     t.string   "name"
@@ -45,18 +45,13 @@ ActiveRecord::Schema.define(version: 20150311192538) do
     t.datetime "updated_at"
   end
 
-  create_table "bands_performers", id: false, force: true do |t|
+  create_table "bands_records", id: false, force: true do |t|
     t.integer "band_id"
-    t.integer "performer_id"
+    t.integer "record_id"
   end
 
-  add_index "bands_performers", ["band_id"], name: "index_bands_performers_on_band_id"
-  add_index "bands_performers", ["performer_id"], name: "index_bands_performers_on_performer_id"
-
-  create_table "performers", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+  add_index "bands_records", ["band_id"], name: "index_bands_records_on_band_id"
+  add_index "bands_records", ["record_id"], name: "index_bands_records_on_record_id"
 
   create_table "records", force: true do |t|
     t.string   "name"

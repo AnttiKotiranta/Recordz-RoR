@@ -3,7 +3,7 @@ class Band < ActiveRecord::Base
 
 	has_and_belongs_to_many :artists
 	has_and_belongs_to_many :performers
-	has_many :records, through: :performers
+	has_and_belongs_to_many :records
 
 	validates :name, :formed,  presence: true
 

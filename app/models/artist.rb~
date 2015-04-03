@@ -6,7 +6,6 @@ class Artist < ActiveRecord::Base
 	has_many :records, through: :performers
 
 	validates :name, presence: true
-	validates :bands, uniqueness: true
 
 	
 
