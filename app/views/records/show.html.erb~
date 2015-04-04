@@ -3,12 +3,13 @@
 </h1>
 
 <p>
-  Released in <%= @record.year %>
+  <strong>Released in <%= @record.year %></strong>
 </p>
 
 <p>
   <%= @record.info %>
 </p>
+<p>In collection of<%= pluralize(@record.users.count, 'member')%>
 <h3>Performed by</h3>
 <table class="table table-hover">
   <thead>
@@ -24,13 +25,15 @@
     	</tr>
   </body>
 </table>
-
 <p>
+<br>
 <% if current_user %>
-
-<%=link_to 'Add record to collection', add_users_record_path, :method=>'put', class:"btn btn-primary" %>
-
-<h3>Add performer for the record</h3>
+<% if not current_user.records.find_by id:@record.id%>
+	<%=link_to 'Add record to collection', add_to_collection_record_path, :method=>'put', class:"btn btn-primary" %>
+<%else%> <%=link_to 'Remove from collection', remove_from_collection_record_path, :method=>'put', class:"btn btn-danger" %>
+<%end%>
+<br><br>
+<h3>Add performer:</h3>
 <%= form_tag(add_artists_record_path, :method=>'put') do %>
  <p>
    <%= select_tag(:artist_id, options_from_collection_for_select(@artists, :id, :name)) %>

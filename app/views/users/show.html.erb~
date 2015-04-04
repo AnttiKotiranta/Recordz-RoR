@@ -6,13 +6,17 @@
 <table class="table table-hover">
 	<thead>
 	 <tr>
-	  <th>Name<th>
+	  <th>Name</th>
+	  <th>Bands</th>
+	  <th>Artists</th>
 	 </tr>
 	</th>
 	<tbody>
 	<% @user.records.each do |r| %>
 	 <tr>
 	  <td><%=link_to r.name, record_path(r) %></td>
+	  <td><% r.bands.each do |b|%><%=link_to b.name, band_path(b)%>, <%end%></td>
+	  <td><% r.artists.each do |a|%><%=link_to a.name, artist_path(a)%>, <%end%></td>
 	</tr>
 	<%end%>
 	</tbody>
@@ -24,6 +28,7 @@
 <p>
  <% if @user == current_user %>
    <%= link_to 'Edit', edit_user_path(@user), class:"btn btn-primary" %>
+<br>
 <br>
    <%= link_to 'Destroy account', user_path(@user), method: :delete, data: {confirm: 'Are you sure?' }, class:"btn btn-danger" %>
  <%end%>

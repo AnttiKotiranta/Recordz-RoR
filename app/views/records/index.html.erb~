@@ -5,8 +5,9 @@
     <tr>
       <th>Name</th>
       <th>Year</th>
-      <th>Performed by</th>
-      <th>Band</th>
+      <th>Performed by:</th>
+      <th>Bands</th>
+      <th>Artists</th>
     </tr>
   </thead>
 

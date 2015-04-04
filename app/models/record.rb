@@ -18,8 +18,7 @@ class Record < ActiveRecord::Base
 
 	def remove_collector(userid)
 	if self.users.find_by id:userid
-	rec = self.users.find_by id:userid
-	self.users.where(id: userid).delete
+	self.users.delete(User.find userid)
 	end
 	end
 end

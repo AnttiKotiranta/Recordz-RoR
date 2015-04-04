@@ -1,5 +1,5 @@
 class RecordsController < ApplicationController
-  before_action :set_record, only: [:show, :edit, :update, :destroy, :add_bands, :add_artists, :add_to_collection]
+  before_action :set_record, only: [:show, :edit, :update, :destroy, :add_bands, :add_artists, :add_to_collection, :remove_from_collection]
   before_action :check_signed_in, except: [:index, :show]
 
   # GET /records
@@ -83,14 +83,18 @@ class RecordsController < ApplicationController
   def add_to_collection
 	user = current_user.id
 	if @record.add_collector(user)
-	  redirect_to record_path(@record), notice: 'Record added to collection.'
+	  redirect_to user_path(user), notice: 'Record added to collection.'
 	else 
-	 redirect_to record_path(@record), notice: 'Already in collection?'
+	 redirect_to user_path(user), notice: 'Already in collection?'
 	end
   end
   def remove_from_collection
 	user = current_user.id
-	
+	if @record.remove_collector(user)
+	  redirect_to user_path(user), notice: 'Record removed from collection'
+	else 
+	 redirect_to user_path(user), notice: 'Record not in your collection?'
+	end
   end
 
 
