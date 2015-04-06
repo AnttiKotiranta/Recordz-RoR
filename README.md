@@ -1,5 +1,5 @@
-<h1>Ruby on Rails: Recordz music record database</h1>
-<i> Ruby on rails harjoitustyö kevät 2015</i>
+<h1>Ruby on Rails: Recordz music database</h1>
+<i> Ruby on Rails practical work Spring 2015 / Ruby on rails harjoitustyö kevät 2015</i>
 
 http://recordz-ror.herokuapp.com
 [![Build Status](https://travis-ci.org/AnttiKotiranta/Recordz-RoR.png)](https://travis-ci.org/AnttiKotiranta/Recordz-RoR)
@@ -21,11 +21,12 @@ Users can edit their bio and delete their usership in their own page.
 
 The testing has been done in 3 sections:
 
-1. Site based testing after changes to database, site or function
+1. Console and interface(site) based testing after changes to database, site or function
 2. Unit testing by using Rspec: Only models have been tested with rspec. The site functionality has been tested through the interface.
 3. User testing with the help of friends (Thank you!) 
 
 <b>Datamodel<b>
+<br>
 <br>
 [![yuml](http://yuml.me/c5d5d3d3)]
 
