@@ -14,7 +14,7 @@ RSpec.describe Artist, type: :model do
    end
   describe "without correct name" do
 
-	it "is not valid and saved" do
+	it "is not valid or saved" do
 	artist = Artist.create name:"", info:"yeah"
 	expect(artist).not_to be_valid
 	expect(Artist.count).to eq(0)

@@ -40,6 +40,29 @@ RSpec.describe Record, type: :model do
 	record.remove_collector(user)
 	expect(user.records.count).to eq(0)
 	end
+  end
 
+  describe "can have" do
+
+	it "a band added to the record" do
+	record = FactoryGirl.create(:record)
+	band = FactoryGirl.create(:band)
+	record.add_band(band)
+
+	expect(record.add_band(band)).to eq(false)
+	expect(record.bands.count).to eq(1)
+	expect(band.records.count).to eq(1)
+	end
+
+	it "an artist added to the record" do
+	record = FactoryGirl.create(:record)
+	artist = FactoryGirl.create(:artist)
+	record.add_artist(artist)
+
+	expect(record.add_artist(artist)).to eq(false)
+	expect(record.artists.count).to eq(1)
+	expect(artist.records.count).to eq(1)
+	end
+		
   end
 end

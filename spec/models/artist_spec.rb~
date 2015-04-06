@@ -19,4 +19,5 @@ RSpec.describe Artist, type: :model do
 	expect(artist).not_to be_valid
 	expect(Artist.count).to eq(0)
 	end
+  end
 end
