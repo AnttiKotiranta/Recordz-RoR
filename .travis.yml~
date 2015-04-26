@@ -10,5 +10,6 @@ deploy:
   provider: heroku
   app: recordz-ror
   run: "rake db:migrate"
+  api_key: ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789ABCD
   on:
-    repo: recordz-ror
+    repo: AnttiKotiranta/Recordz-RoR
