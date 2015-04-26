@@ -13,4 +13,4 @@ deploy:
   on:
     repo: AnttiKotiranta/Recordz-RoR
   api_key:
-    secure: aHNM/rlupbcE7TlJXT5zy8X7trrktLEs9ux5Hl7DpHqSrxVu67wvBh7TZBaPU/BZk2AfdCDinTMTVaCbDB5LsQikHVmqOwJGkMTMMBlg2A8aDAWBcwsnI6FFxqGnfJMz2klYWIvNgSW84ucqE+K77ySFkJRsqzVrPS4MpromAag=
+    secure: gvt9vvqA6+tC9J9PKjIBYsYVfnqZjjcoKQMutc7/HJN2gRKu5eCJxzOdUXoMlxm68W7O7STTCg7dwbrAkVSph1Ni5VopJot4sOO5OtXnQQ1By1BzmGdK/yGtcYxewV9n2/tKzAMUmn8llxZ/URxG5iXRAqvRtpg7VBpogJNPiKI=
