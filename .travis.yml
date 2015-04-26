@@ -11,4 +11,4 @@ deploy:
   app: recordz-ror
   run: "rake db:migrate"
   on:
-    repo: AnttiKotiranta/recordz-ror
+    repo: recordz-ror
