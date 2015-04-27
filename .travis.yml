@@ -11,7 +11,6 @@ deploy:
   app: recordz-ror
   run: rake db:migrate
   api_key:
-    secure: gvt9vvqA6+tC9J9PKjIBYsYVfnqZjjcoKQMutc7/HJN2gRKu5eCJxzOdUXoMlxm68W7O7STTCg7dwbrAkVSph1Ni5VopJot4sOO5OtXnQQ1By1BzmGdK/yGtcYxewV9n2/tKzAMUmn8llxZ/URxG5iXRAqvRtpg7VBpogJNPiKI=  
+    secure: TtTxpC1Ww9xmEoqOgVtVCkfFZCMjZiaeMYTb/ez/vH6Wh49LoIBMIft1K0e+cTtTgfsjTnmtSIcjK/nkflKiy0FSt1FPP0e2ZIt2EOt3IBpQd1lTKTwinipcBkYG2KuPdQHpulUaGRBOaWkFVH6aHymaNuZJpYCgOoTnHbb5N8A=
   on:
     repo: AnttiKotiranta/Recordz-RoR
-
