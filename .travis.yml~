@@ -6,10 +6,4 @@ script:
 - RAILS_ENV=test bundle exec rake db:migrate --trace
 - bundle exec rake db:test:prepare
 - bundle exec rspec -fd spec/
-deploy:
-  provider: heroku
-  app: recordz-ror
-  run: "rake db:migrate"
-  api_key: ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789ABCD
-  on:
-    repo: AnttiKotiranta/Recordz-RoR
+
