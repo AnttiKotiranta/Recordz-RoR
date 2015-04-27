@@ -10,8 +10,8 @@ deploy:
   provider: heroku
   app: recordz-ror
   run: rake db:migrate
- api_key:
+  api_key:
     secure: gvt9vvqA6+tC9J9PKjIBYsYVfnqZjjcoKQMutc7/HJN2gRKu5eCJxzOdUXoMlxm68W7O7STTCg7dwbrAkVSph1Ni5VopJot4sOO5OtXnQQ1By1BzmGdK/yGtcYxewV9n2/tKzAMUmn8llxZ/URxG5iXRAqvRtpg7VBpogJNPiKI=  
   on:
     repo: AnttiKotiranta/Recordz-RoR
- 
+
